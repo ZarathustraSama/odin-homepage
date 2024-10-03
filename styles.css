@@ -1,4 +1,68 @@
-main {
+html, body {
+  margin: 0;
+}
+
+body {
+  display: grid;
+}
+
+header .github, header .linkedin, header .twitter {
+  width: 32px;
+}
+
+main .github, main .share {
+  width: 24px;
+}
+
+footer .github, footer .linkedin, footer .twitter {
+  width: 36px;
+}
+
+header h1, footer h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.cards-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, min-max(100px, 1fr));
+}
+
+.project-card {
+  display: grid;
+  
+}
+
+.external-links {
+  display: flex;
+  align-items: end;
+}
+
+footer {
+  background-color: #2596be;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-max(100px, 1fr));
+}
+
+@media (max-width: 599px) {
+  header, main, footer {
+    margin: 18px 12px;
+  }
+}
+
+@media (max-width: 999px) {
+  header, main, footer {
+    margin: 24px 16px;
+  }
+}
+
+@media (min-width: 1000px) {
+  header, main, footer {
+    padding: 32px 18px;
+  }
 }
