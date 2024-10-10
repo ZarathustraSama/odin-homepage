@@ -1,10 +1,43 @@
-html, body {
-  margin: 0;
+/* Global/Generic styles */
+
+* {
+  box-sizing: border-box;
 }
 
-body {
-  display: grid;
+html, body {
+  margin: 0;
+  width: 100%;
 }
+
+header, main, footer {
+  padding: 32px;
+}
+
+h1, h2, .img-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: #777;
+}
+
+.img-text {
+  color: white;
+}
+
+/* External link icons */
 
 header .github, header .linkedin, header .twitter {
   width: 32px;
@@ -18,51 +51,243 @@ footer .github, footer .linkedin, footer .twitter {
   width: 36px;
 }
 
-header h1, footer h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
+/* Header styles */
+
+header {
+  display: flex;
+  background-color: #2596be;
+  background-image: linear-gradient(170deg, #2596be 70%, white 70%);
 }
 
-p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+header>img {
+  position: relative;
+  width: 30%;  
+  box-shadow: 0px 3px 10px #888;
 }
+
+.about-me {
+  display: grid;
+  background-color: white;
+  box-shadow: 5px 10px 10px #aaa;
+  padding: 0px 24px;
+  margin: 48px 0px;
+}
+
+.about-me h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.about-me p {
+  line-height: 150%;
+  font-size: 20px;
+  align-self: start;
+}
+
+.about-me .external-links {
+  display: flex;
+  gap: 15px;
+  justify-content: right;
+  margin-bottom: auto;
+}
+
+/* Main styles */
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, min-max(100px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
 }
 
-.project-card {
+.card {
   display: grid;
-  
+  box-shadow: 5px 10px 10px gray, 5px 10px 10px gray;
 }
 
-.external-links {
-  display: flex;
-  align-items: end;
+.card-img {
+  width: 100%;
+  height: 35vh;
+  background-color: orange;
 }
+
+.card-img span {
+  display: block;
+  width: 100%;
+  text-align: center;
+  line-height: 30vh;
+  font-size: 2em;
+}
+
+.card-info-header {
+  display: flex;
+}
+
+.card-info-header h2, .card-info-header .external-links {
+  margin: 16px;
+}
+
+.card-info-header h2 {
+  flex-grow: 1;
+}
+
+.card-info-header .external-links {
+  display: flex;
+  gap: 16px;
+}
+
+.card-description {
+  padding: 0px 16px;
+}
+
+/* Footer styles */
 
 footer {
   background-color: #2596be;
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(auto-fit, min-max(100px, 1fr));
+  color: white;
 }
 
-@media (max-width: 599px) {
-  header, main, footer {
-    margin: 18px 12px;
-  }
+footer h1 {
+  font-size: 48px;
+  font-weight: 500;
 }
+
+footer {
+  font-size: 20px;
+}
+
+.contact-me {
+  display: grid;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+.phone, .email {
+  display: flex;
+  gap: 16px;
+}
+
+.phone span, .email span {
+  align-self: center;
+}
+
+.phone {
+  margin-top: 24px;
+}
+
+.email {
+  margin-bottom: 24px;
+}
+
+.phone img, .email img {
+  width: 32px;
+}
+
+footer .external-links {
+  display: flex;
+  gap: 16px;
+}
+
+footer>img {
+  width: 50%;
+}
+
+
 
 @media (max-width: 999px) {
   header, main, footer {
-    margin: 24px 16px;
+    padding: 24px;
   }
+
+  header {
+    display: inline-block;
+  }
+
+  .about-me h1 {
+    font-size: 24px;
+  }
+
+  header img {
+    float: left;
+  }
+
+  .about-me {
+    display: block;
+    text-align: center;
+    padding: 24px;
+    margin: 24px;
+  }
+
+  .about-me p {
+    overflow-wrap: break-word;
+    font-size: 16px;
+  }
+
+  .about-me .external-links {
+    justify-content: center;
+  }
+
+  .external-links img {
+    width: 24px;
+  }
+
 }
 
-@media (min-width: 1000px) {
-  header, main, footer {
-    padding: 32px 18px;
+@media (max-width: 599px) {
+  header, main, .contact-me{
+    padding: 8px;
   }
+
+  h1 {
+    text-align: center;
+  }
+
+  header {
+    display: grid;
+  }
+
+  header img {
+    width: 100%;
+  }
+
+  .about-me {
+    text-align: center;
+  }
+
+  .about-me .external-links {
+    justify-self: center;
+  }
+
+  footer {
+    display: grid;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .contact-me {
+    text-align: center;
+  }
+
+  .contact-me :not(h1) {
+    font-size: 1em;
+  }
+
+  .phone {
+    margin-top: 16px;
+    
+  }
+
+  .email {
+    margin-bottom: 16px;
+  }
+
+  footer .external-links {
+    justify-content: center;
+  }
+
+  footer>img {
+    width: 100vw;
+  }
+
 }
